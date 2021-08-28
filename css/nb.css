@@ -1,0 +1,413 @@
+
+/* ========================================================================
+   Component: Base
+ ========================================================================== */
+html {
+  overflow-y:scroll;
+  font-family: source-sans-pro, sans-serif;
+  font-size: 18px;
+  color: #191919; 
+}
+ body {
+  overflow: hidden;
+}
+.nb-page{
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 1500px) {
+  .nb-page-container {
+      background-color:#f2f2f2;
+  }
+
+  .nb-page-container .nb-page {
+      max-width: 1500px;
+      background:#fff;
+  }
+
+  .nb-page-width {
+      max-width:1500px;
+  }
+
+  .nb-page-margin-top {
+      margin-top:70px;
+  }
+
+  .nb-page-margin-bottom {
+      margin-bottom:70px;
+  }
+}
+
+.nb-toolbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  position:relative
+}
+
+.nb-toolbar-default {
+  background:#1b2831
+}
+
+.nb-header {
+  position: absolute;
+  z-index: 980;
+  left: 0;
+  right:0
+}
+
+.nb-headerbar-top {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background:#0476D9
+}
+
+.nb-headerbar-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background:#0476D9
+}
+
+.nb-headerbar-stacked {
+  margin-top:20px
+}
+
+.nb-header-transparent .nb-headerbar-bottom, .nb-header-transparent .nb-headerbar-top {
+  background:0 0
+}
+
+.nb-header-transparent .nb-headerbar-top {
+  border-bottom-color:transparent
+}
+
+.nb-header-mobile-slide {
+  z-index:1020
+}
+
+@media (min-width: 640px) {
+  .nb-sidebar {
+      min-width:200px
+  }
+}
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px 0;
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  text-transform:none
+}
+
+/* Selection pseudo-element
+ ========================================================================== */
+ ::selection {
+  background: #A4A2C7;
+  color: #fff;
+}
+/* ========================================================================
+   Component: Background
+ ========================================================================== */
+/* Color
+ ========================================================================== */
+ /*
+  .uk-background-primary {
+    background-color: #00a0de; 
+  }*/
+  
+
+/* ========================================================================
+   Component: Navbar
+ ========================================================================== */
+
+
+/* Container
+ ========================================================================== */
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background: #F24F13;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-icon-link,
+.uk-light .uk-icon-link {
+  color: #ffffff;
+}
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-icon-link:focus, 
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-icon-link:hover,
+.uk-light .uk-icon-link:focus,
+.uk-light .uk-icon-link:hover {
+  color:rgba(255, 255, 255, .5)
+}
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-icon-link:active,
+.uk-light .uk-icon-link:active {
+  color: rgba(255, 255, 255, .5);
+}
+
+/* Nav
+ ========================================================================== */
+
+/*
+ * Nav items
+ */
+ .uk-navbar-item, .uk-navbar-nav > li > a, .uk-navbar-toggle {
+  padding: 0 25px;
+  font-family: oxygen, sans-serif;
+  text-decoration:none
+}
+
+ .uk-light .uk-navbar-nav > li > a,
+ .uk-navbar-nav > li > a {
+  color: rgba(255,255,255,.8);
+  transition: .1s ease-in-out;
+  transition-property: color, background-color, border-color, box-shadow;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+  text-transform:uppercase
+}
+
+.uk-light .uk-navbar-nav > li > a::before,
+.uk-navbar-nav > li > a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  bottom: 24px;
+  height: 1px;
+  background-color: #ffffff;
+  transition: .4s ease-in-out;
+  transition-property: background-color, border-color, box-shadow, height, right;
+  left: 25px;
+  right:calc(102% - 25px)
+}
+
+
+/*
+ * Hover
+ * Apply hover style also to focus state and if dropdown is opened
+ */
+ .uk-light .uk-navbar-nav > li:hover > a,
+ .uk-light .uk-navbar-nav > li > a.uk-open,
+ .uk-light .uk-navbar-nav > li > a:focus,
+ .uk-navbar-nav > li:hover > a,
+ .uk-navbar-nav > li > a.uk-open,
+ .uk-navbar-nav > li > a:focus {
+  color: rgba(255,255,255,1);
+  outline:0
+}
+.uk-navbar-nav > li:hover > a::before, 
+.uk-navbar-nav > li > a.uk-open::before, 
+.uk-navbar-nav > li > a:focus::before {
+  right:25px;
+}
+/* OnClick */
+.uk-light .uk-navbar-nav > li > a:active,
+.uk-navbar-nav > li > a:active {
+  color:#ffffff
+}
+/* Active */
+.uk-light .uk-navbar-nav > li.uk-active > a,
+.uk-navbar-nav > li.uk-active > a {
+  color:#ffffff
+}
+.uk-light .uk-navbar-nav > li.uk-active > a::before,
+.uk-navbar-nav > li.uk-active > a::before {
+  right:25px
+}
+/* Toggle
+ ========================================================================== */
+ .uk-navbar-toggle {
+  color: rgba(255,255,255,.5);
+}
+.uk-navbar-toggle:hover,
+.uk-navbar-toggle:focus,
+.uk-navbar-toggle.uk-open {
+  color: rgba(255,255,255,.7);
+}
+
+
+/* ========================================================================
+   Component: Close
+ ========================================================================== */
+
+.uk-close {
+  color: #cbcbcb;
+}
+
+.uk-close:focus,
+.uk-close:hover {
+  color: #767779;
+  outline:0;
+}
+
+
+/* ========================================================================
+   Component: Utility
+ ========================================================================== */
+
+ /* Logo
+ ========================================================================== */
+ .uk-light .uk-logo, .uk-logo {
+  color: #fff;
+  font-family: oxygen, sans-serif;
+}
+/* Hover + Focus */
+.uk-light .uk-logo:hover,
+.uk-light .uk-logo:focus,
+.uk-logo:hover,
+.uk-logo:focus {
+  color: #fff;
+  outline: none;
+}
+
+
+/* ========================================================================
+   Component: Section
+ ========================================================================== */
+
+/* Style modifiers
+ ========================================================================== */
+/*
+ * Default
+ */
+ .uk-section-default {
+  background: #fff;
+}
+/*
+ * Muted
+ */
+.uk-section-muted {
+  background: #f8f8f8;
+}
+/*
+ * Primary
+ */
+.uk-section-primary {
+  background: #484258;
+}
+/*
+ * Secondary
+ */
+.uk-section-secondary {
+  background: #1E3E59;
+}
+
+
+
+/* ========================================================================
+   Component: Off-canvas
+ ========================================================================== */
+
+ .uk-offcanvas-bar {
+  background: #fff;
+}
+/* 
+.uk-nav-default > li > a{
+  color: #90929d;
+}*/ 
+
+.uk-offcanvas-bar .uk-nav-default > li > a {
+  color: #90929d;
+  text-transform: uppercase;
+  font-size:24px;
+  font-weight: 700;
+}
+
+.uk-offcanvas-bar .uk-nav-default > li > a:hover,
+.uk-offcanvas-bar .uk-nav-default > li > a:focus {
+  color: #515070;
+}
+
+.uk-offcanvas-bar .uk-close {
+  color:#90929d;
+}
+
+.uk-offcanvas-bar .uk-close:hover,
+.uk-offcanvas-bar .uk-close:focus {
+  color: #515070;
+}
+
+
+/* ========================================================================
+   Component: Container
+ ========================================================================== */
+/*
+ * 1. Box sizing has to be `content-box` so the max-width is always the same and
+ *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+ */
+
+ .uk-container::after, .uk-container::before {
+  content: "";
+  display: table;
+  }
+
+  .uk-container::after {
+    clear: both;
+  }
+
+ /* ========================================================================
+   Component: Tile
+ ========================================================================== */
+ /* Style modifiers
+ ========================================================================== */
+/*
+ * Default
+ */
+.uk-tile-default {
+  background: #fff;
+}
+/*
+ * Muted
+ */
+.uk-tile-muted {
+  background: #f8f8f8;
+}
+/*
+ * Primary
+ */
+.uk-tile-primary {
+  background: #626262;
+}
+/*
+ * Secondary
+ */
+.uk-tile-secondary {
+  background: #524F4F;
+}
+
+
+/* Background modifier
+ ========================================================================== */
+ .uk-text-background { 
+  color:#F24F13!important
+}
+@supports (-webkit-background-clip:text) {
+  .uk-text-background {
+      background-color:#F24F13;
+      color:transparent!important;
+      background-image:linear-gradient(150deg,#7b93a7 0,#12298B 20%,#F24F13 70%,#A4A2C7 100%)
+  }
+}
+
+
+/* ========================================================================
+   Selector element
+ ========================================================================== */
+
+ #page01 > [class*='uk-background-'] {min-height: 50vh;} 
+
+ /* ========================================================================
+   Responsive map
+ ========================================================================== */
+ .map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
